@@ -43,6 +43,9 @@ Here is an example for using AKT-NonRasch model (on all datasets):
 python3 main.py --dataset assist2015 --model akt_cid
 ```
 
+### Errata
+Thanks to Rui Zou and Xuhao Li for pointing out a bug in line 306 of akt.py. It has been fixed now.
+
 
 Contact: Aritra Ghosh (aritraghosh.iem@gmail.com).
 

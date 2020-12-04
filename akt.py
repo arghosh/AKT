@@ -303,7 +303,7 @@ def attention(q, k, v, d_k, mask, dropout, zero_pad, gamma=None):
 
     with torch.no_grad():
         scores_ = scores.masked_fill(mask == 0, -1e32)
-        scores_ = F.softmax(scores, dim=-1)  # BS,8,seqlen,seqlen
+        scores_ = F.softmax(scores_, dim=-1)  # BS,8,seqlen,seqlen
         scores_ = scores_ * mask.float().to(device)
         distcum_scores = torch.cumsum(scores_, dim=-1)  # bs, 8, sl, sl
         disttotal_scores = torch.sum(
